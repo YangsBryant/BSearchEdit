@@ -2,14 +2,11 @@ package com.bryant.editlibrary;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -26,8 +23,10 @@ public class BSearchEdit extends View {
     private int line_color;
     private int line_height=1;
     private int line_width=ViewGroup.LayoutParams.MATCH_PARENT;
+    private boolean isLine = true;
     private int popup_bg;
     private TextClickListener textClickListener;
+    private boolean isTimely = true;
 
     public BSearchEdit(Activity activity, EditText editText,int widthPopup) {
         super(activity);
@@ -50,6 +49,7 @@ public class BSearchEdit extends View {
         searchPopupWindow.setLine_height(line_height);
         searchPopupWindow.setLine_width(line_width);
         searchPopupWindow.setPopup_bg(popup_bg);
+        searchPopupWindow.setIsLine(isLine);
         searchPopupWindow.build();
         searchPopupWindow.setTextClickListener(new SearchPopupWindow.TextClickListener() {
             @Override
@@ -60,25 +60,25 @@ public class BSearchEdit extends View {
                 }
             }
         });
-
-
-        RxTextView.textChanges(editText)
-                .debounce(500, TimeUnit.MILLISECONDS)
-                .observeOn(AndroidSchedulers.mainThread())
-                .map(new Function<CharSequence, String>() {
-                    @Override
-                    public String apply(CharSequence charSequence) {
-                        return charSequence.toString();
-                    }
-                })
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) {
-                        if(s.length()>0){
-                            searchPopupWindow.showAsDropDown(editText);
+        if(isTimely) {
+            RxTextView.textChanges(editText)
+                    .debounce(500, TimeUnit.MILLISECONDS)
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .map(new Function<CharSequence, String>() {
+                        @Override
+                        public String apply(CharSequence charSequence) {
+                            return charSequence.toString();
                         }
-                    }
-                });
+                    })
+                    .subscribe(new Consumer<String>() {
+                        @Override
+                        public void accept(String s) {
+                            if (s.length() > 0) {
+                                searchPopupWindow.showAsDropDown(editText);
+                            }
+                        }
+                    });
+        }
     }
 
     //参数设置完毕，一定要build一下
@@ -127,8 +127,24 @@ public class BSearchEdit extends View {
         return this;
     }
 
+    public BSearchEdit setIsLine(boolean isLine) {
+        this.isLine = isLine;
+        return this;
+    }
+
     public void setSearchList(ArrayList<String> list) {
         searchPopupWindow.setList(list);
+    }
+
+    public BSearchEdit setTimely(boolean timely) {
+        isTimely = timely;
+        return this;
+    }
+
+    public void showPopup() {
+        if(!isTimely) {
+            searchPopupWindow.showAsDropDown(editText);
+        }
     }
 
     //点击监听器

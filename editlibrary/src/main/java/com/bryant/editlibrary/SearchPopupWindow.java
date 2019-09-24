@@ -26,6 +26,7 @@ class SearchPopupWindow extends PopupWindow {
     private int line_height;
     private int line_width;
     private int popup_bg;
+    private boolean isLine;
     private TextClickListener textClickListener;
 
     SearchPopupWindow(Activity activity,int popup_width){
@@ -56,6 +57,7 @@ class SearchPopupWindow extends PopupWindow {
         adapter.setLine_bg(line_bg);
         adapter.setLine_height(line_height);
         adapter.setLine_width(line_width);
+        adapter.setIsLine(isLine);
         recyclerView.setAdapter(adapter);
         adapter.setTextClickListener(new TitleAdapter.TextClickListener() {
             @Override
@@ -115,6 +117,10 @@ class SearchPopupWindow extends PopupWindow {
 
     public void setPopup_bg(int popup_bg) {
         this.popup_bg = popup_bg;
+    }
+
+    public void setIsLine(boolean isLine) {
+        this.isLine = isLine;
     }
 
     //点击监听器

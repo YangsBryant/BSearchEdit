@@ -21,6 +21,7 @@ public class TitleAdapter extends BaseMultiItemQuickAdapter<MultipleItemEntity, 
     private int line_bg;
     private int line_height;
     private int line_width;
+    private boolean isLine;
     private TextClickListener textClickListener;
 
     TitleAdapter(@Nullable List<MultipleItemEntity> data, Activity activity) {
@@ -55,6 +56,9 @@ public class TitleAdapter extends BaseMultiItemQuickAdapter<MultipleItemEntity, 
         linearParams2.width = line_width;
         line.setLayoutParams(linearParams2);
         helper.setBackgroundColor(R.id.item_line,line_bg);
+        if(!isLine){
+            helper.setVisible(R.id.item_line,false);
+        }
         if(helper.getLayoutPosition()==getData().size()-1){
             helper.setVisible(R.id.item_line,false);
         }
@@ -102,6 +106,10 @@ public class TitleAdapter extends BaseMultiItemQuickAdapter<MultipleItemEntity, 
 
     public void setLine_bg(int line_bg) {
         this.line_bg = line_bg;
+    }
+
+    public void setIsLine(boolean isLine) {
+        this.isLine = isLine;
     }
 
     //点击监听器
