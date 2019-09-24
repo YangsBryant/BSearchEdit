@@ -36,14 +36,14 @@ setLine_width(int line_width) | 设置线条宽度，单位dp
 setIsLine(boolean isLine) | 是否显示分割线
 setPopup_bg(int popup_bg) | 设置窗体背景，可以是图片，颜色，selector等资源
 
-## 实例代码
+## 关键代码
 ```java
         EditText editText = findViewById(R.id.edit_text);//获取一个EditText
         bSearchEdit = new BSearchEdit(this,editText,200);//第三个必须要设置窗体的宽度，单位dp
         bSearchEdit.build();
         //更新数据
         bSearchEdit.setSearchList(list);
-···
+```
 
 ##演示代码
 ```java
