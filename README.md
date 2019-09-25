@@ -1,4 +1,5 @@
 # BSearchEdit
+![这是一张图片](https://github.com/YangsBryant/BSearchEdit/blob/master/gifhome_320x693_11s.gif)
 
 ## 引入module
 ```java
