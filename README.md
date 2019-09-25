@@ -12,7 +12,7 @@ allprojects {
 }
 ```
 ```java
-implementation 'com.github.YangsBryant:BSearchEdit:1.0.1'
+implementation 'com.github.YangsBryant:BSearchEdit:1.0.4'
 ```
 
 #支持自动展示搜索条目
