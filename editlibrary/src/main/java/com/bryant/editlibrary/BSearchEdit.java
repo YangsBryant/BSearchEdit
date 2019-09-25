@@ -35,7 +35,7 @@ public class BSearchEdit extends View {
         this.widthPopup = widthPopup;
         textColor  = activity.getResources().getColor(R.color.gray);
         line_color  = activity.getResources().getColor(R.color.gray2);
-        popup_bg = R.drawable.popup_bg;
+        popup_bg = R.drawable.bs_popup_bg;
     }
 
     @SuppressLint("CheckResult")

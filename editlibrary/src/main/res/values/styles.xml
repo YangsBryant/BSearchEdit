@@ -1,6 +1,6 @@
 <resources >
 
-    <style name="popup_style" parent="android:Animation">
+    <style name="bs_popup_style" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/popup_enter</item>
         <item name="android:windowExitAnimation">@anim/popup_exit</item>
     </style>

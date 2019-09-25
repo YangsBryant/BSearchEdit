@@ -44,7 +44,7 @@ class SearchPopupWindow extends PopupWindow {
         view.setBackgroundResource(popup_bg);
         this.setFocusable(false);
         this.setOutsideTouchable(true);
-        this.setAnimationStyle(R.style.popup_style);
+        this.setAnimationStyle(R.style.bs_popup_style);
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager recyclerViewLayoutManager = new LinearLayoutManager(activity);
