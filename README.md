@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-#module里有演示代码
 
 ## 联系QQ：961606042
 
