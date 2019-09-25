@@ -46,7 +46,7 @@ setPopup_bg(int popup_bg) | 设置窗体背景，可以是图片，颜色，sele
         bSearchEdit.setSearchList(list);
 ```
 
-##演示代码
+## 演示代码
 ```java
 public class MainActivity extends AppCompatActivity {
 
