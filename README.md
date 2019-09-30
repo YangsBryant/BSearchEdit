@@ -46,6 +46,9 @@ setPopup_bg(int popup_bg) | 设置窗体背景，可以是图片，颜色，sele
         bSearchEdit.setSearchList(list);
 ```
 
+#Tips:遇到is your activity running?
+ 那是因为activity还未创建，showPopup()调用的太早了
+
 ## 演示代码
 ```java
 public class MainActivity extends AppCompatActivity {
