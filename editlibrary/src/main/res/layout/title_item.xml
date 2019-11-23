@@ -17,7 +17,7 @@
         android:textSize="15sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         />
 
     <View
@@ -26,7 +26,7 @@
         android:layout_height="1dp"
         android:background="@color/gray2"
         app:layout_constraintTop_toBottomOf="@id/item_title"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         />
 </android.support.constraint.ConstraintLayout>
