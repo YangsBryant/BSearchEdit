@@ -28,5 +28,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
    // implementation project(':editlibrary')
 
-    implementation 'com.github.YangsBryant:BSearchEdit:1.0.1'
+    implementation 'com.github.YangsBryant:BSearchEdit:1.0.4'
 }
