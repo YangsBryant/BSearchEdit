@@ -1,4 +1,5 @@
 # BSearchEdit
+![这是一张图片](https://github.com/YangsBryant/BSearchEdit/blob/master/gifhome_320x693_11s.gif)
 
 ## 引入module
 ```java
@@ -11,7 +12,7 @@ allprojects {
 }
 ```
 ```java
-implementation 'com.github.YangsBryant:BSearchEdit:1.0.1'
+implementation 'com.github.YangsBryant:BSearchEdit:1.0.4'
 ```
 
 #支持自动展示搜索条目
@@ -45,7 +46,10 @@ setPopup_bg(int popup_bg) | 设置窗体背景，可以是图片，颜色，sele
         bSearchEdit.setSearchList(list);
 ```
 
-##演示代码
+#Tips:遇到is your activity running?
+ 那是因为activity还未创建，showPopup()调用的太早了
+
+## 演示代码
 ```java
 public class MainActivity extends AppCompatActivity {
 
@@ -105,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-#演示代码module里有
+#演示代码工程里有
 
 ## 联系QQ：961606042
 
