@@ -59,9 +59,9 @@ public class TitleAdapter extends BaseMultiItemQuickAdapter<MultipleItemEntity, 
         if(!isLine){
             helper.setVisible(R.id.item_line,false);
         }
-        if(helper.getLayoutPosition()==getData().size()-1){
+        /*if(helper.getLayoutPosition()==getData().size()-1){
             helper.setVisible(R.id.item_line,false);
-        }
+        }*/
     }
 
     public void setTextWidth(int textWidth) {
